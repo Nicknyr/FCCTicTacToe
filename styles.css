@@ -1,0 +1,35 @@
+body {
+  background-color: #1abc9c;
+  color: ghostwhite;
+  margin: 0px;
+  text-align: center; }
+
+h1 {
+  text-align: center;
+  margin-top: 1em;
+  font-size: 3em; }
+
+.col {
+  display: inline-block;
+  text-align: center;
+  height: 70px;
+  width: 80px;
+  background: #34495e;
+  margin-top: 2px;
+  font-size: 2em;
+  line-height: 70px; }
+
+button {
+  margin-top: 1em;
+  padding: .5em;
+  font-size: 1em;
+  text-transform: uppercase;
+  background-color: #34495e;
+  color: ghostwhite;
+  border: 1px solid white;
+  font-weight: bold; }
+  button:hover {
+    color: #34495e;
+    background-color: ghostwhite; }
+
+/*# sourceMappingURL=styles.css.map */
