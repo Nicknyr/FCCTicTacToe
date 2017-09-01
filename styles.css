@@ -17,7 +17,8 @@ h1 {
   background: #34495e;
   margin-top: 2px;
   font-size: 2em;
-  line-height: 4em; }
+  line-height: 4em;
+  overflow: auto; }
 
 button {
   margin-top: 1em;
