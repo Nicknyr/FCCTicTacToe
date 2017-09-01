@@ -12,12 +12,12 @@ h1 {
 .col {
   display: inline-block;
   text-align: center;
-  height: 70px;
-  width: 80px;
+  height: 4em;
+  width: 4em;
   background: #34495e;
   margin-top: 2px;
   font-size: 2em;
-  line-height: 70px; }
+  line-height: 4em; }
 
 button {
   margin-top: 1em;
@@ -31,5 +31,10 @@ button {
   button:hover {
     color: #34495e;
     background-color: ghostwhite; }
+
+@media (max-width: 500px) {
+  .col {
+    height: 3em;
+    width: 3em; } }
 
 /*# sourceMappingURL=styles.css.map */
