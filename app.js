@@ -1,5 +1,5 @@
-const PLAYER_TOKEN = 'X'
-const COMPUTER_TOKEN = 'O'
+var PLAYER_TOKEN = '';
+var COMPUTER_TOKEN = '';
 
 $(document).ready(function(){
   const grid = [
@@ -7,6 +7,24 @@ $(document).ready(function(){
     [' ', ' ', ' '],
     [' ', ' ', ' ']
   ];
+
+  function choose() {
+    $('#x-or-o').show();
+
+    $('#x').on('click', function(){
+      PLAYER_TOKEN = 'X';
+      COMPUTER_TOKEN = 'O';
+      $('#x-or-o').hide();
+    })
+
+    $('#o').on('click', function(){
+      PLAYER_TOKEN = 'O';
+      COMPUTER_TOKEN = 'X';
+      $('#x-or-o').hide();
+    })
+  }
+
+    choose();
 
   function isGameOver(){
     //Check if horizontal winner
@@ -80,6 +98,7 @@ $(document).ready(function(){
     gameState = isGameOver()
     if(gameState){
       alert('Game over' + gameState + ' wins');
+
     }
   });
 
