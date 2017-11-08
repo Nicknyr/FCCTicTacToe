@@ -24,7 +24,7 @@ $(document).ready(function(){
     })
   }
 
-    choose();
+  choose();
 
   function isGameOver(){
     //Check if horizontal winner
@@ -82,11 +82,12 @@ $(document).ready(function(){
     const i = $this.data('i');
     const j = $this.data('j');
     grid[i][j] = PLAYER_TOKEN;
-    console.log(grid);
+    //console.log(grid);
 
     let gameState = isGameOver()
-    if(gameState){
-      alert('Game over' + gameState + ' wins');
+    if(gameState && gameState === PLAYER_TOKEN){
+      $('#overlay-win').show();
+      restart();
       return;
     } else {
       // It's the AI's turn
@@ -96,9 +97,9 @@ $(document).ready(function(){
     }
 
     gameState = isGameOver()
-    if(gameState){
-      alert('Game over' + gameState + ' wins');
-
+    if(gameState && gameState === COMPUTER_TOKEN){
+      $('#overlay-lose').show();
+      restart();
     }
   });
 
@@ -110,5 +111,21 @@ $(document).ready(function(){
       }
     }
   });
+
+  function restart() {
+    for(var i = 0; i < 3; i++){
+      for(var j = 0; j < 3; j++){
+        grid[i][j] = ' ';
+        $('.col[data-i=' + i + '][data-j=' + j + ']').html(' ');
+      }
+    }
+  }
+
+  $('.close-x').on('click', notificationClose);
+
+  function notificationClose(){
+    $(this).parent('#overlay-win').hide();
+    $(this).parent('#overlay-lose').hide();
+  }
 
 });

@@ -7,6 +7,64 @@ body {
 
 }
 
+@mixin overlay {
+  color: white;
+  height: 15em;
+  width: 45%;
+  margin-left: 27.5%;
+  margin-right: 27.5%;
+  margin-top: 5%;
+  position: absolute;
+  z-index: 2;
+  box-shadow: 0px 0px 12px black;
+  border-radius: 10px;
+  border: 1px solid ghostwhite;
+  display: none;
+
+  h2 {
+    text-align: center;
+    vertical-align: middle;
+  }
+}
+
+#overlay-win {
+  @include overlay;
+  background-color: #2ecc71;
+
+  .close-x {
+   position: absolute;
+   top: 10px;
+   right: 10px;
+   cursor: pointer;
+   font-size: 16px;
+   border-radius: 50px;
+   width: 18px;
+   height: 18px;
+   line-height: 18px;
+   text-align: center;
+   border: 1px solid white;
+  }
+}
+
+#overlay-lose {
+  @include overlay;
+  background-color: #c0392b;
+
+  .close-x {
+   position: absolute;
+   top: 10px;
+   right: 10px;
+   cursor: pointer;
+   font-size: 16px;
+   border-radius: 50px;
+   width: 18px;
+   height: 18px;
+   line-height: 18px;
+   text-align: center;
+   border: 1px solid white;
+  }
+}
+
 #x-or-o {
   color: white;
   display: none;
@@ -40,24 +98,6 @@ body {
   }
 }
 
-#overlay {
-  height: 10em;
-  width: 30em;
-  background-color: #8e44ad;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 8em;
-  line-height: 10em;
-  z-index: 1;
-  display: block;
-  position: absolute;
-  display: none;
-
-  h2 {
-    text-align: center;
-    vertical-align: middle;
-  }
-}
 
 h1 {
   text-align: center;
@@ -101,5 +141,6 @@ button {
   .col {
     height: 3em;
     width: 3em;
+    overflow: auto;
   }
 }
